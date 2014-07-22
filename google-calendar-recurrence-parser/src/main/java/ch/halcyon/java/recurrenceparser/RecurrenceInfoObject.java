@@ -70,15 +70,17 @@ public class RecurrenceInfoObject {
 		private String frequency;
 		private Date until;
 		private String day;
+		private int count;
 
 		public Rule() {
 		}
 
-		public Rule(String frequency, Date until, String day) {
+		public Rule(String frequency, Date until, String day, int count) {
 			super();
 			this.frequency = frequency;
 			this.until = until;
 			this.day = day;
+			this.count = count;
 		}
 
 		public String getFrequency() {
@@ -103,6 +105,14 @@ public class RecurrenceInfoObject {
 
 		public void setDay(String day) {
 			this.day = day;
+		}
+
+		public int getCount() {
+			return count;
+		}
+
+		public void setCount(int count) {
+			this.count = count;
 		}
 
 	}

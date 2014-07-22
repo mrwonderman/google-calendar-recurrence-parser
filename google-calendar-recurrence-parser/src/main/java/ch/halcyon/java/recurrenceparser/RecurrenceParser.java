@@ -54,13 +54,20 @@ public class RecurrenceParser {
 
 		iObj.getRule().setFrequency(split[2].split("=")[2]);
 
-		String substring = split[3].substring(split[3].indexOf("=") + 1,
-				split[3].indexOf("Z"));
-		try {
-			Date parse = dateFormat.parse(substring);
-			iObj.getRule().setUntil(parse);
-		} catch (ParseException e) {
-			e.printStackTrace();
+		if (split[3].startsWith("COUNT")) {
+			iObj.getRule().setCount(
+					Integer.valueOf(split[3].substring(
+							split[3].indexOf("=") + 1, split[3].length())));
+
+		} else {
+			String substring = split[3].substring(split[3].indexOf("=") + 1,
+					split[3].indexOf("Z"));
+			try {
+				Date parse = dateFormat.parse(substring);
+				iObj.getRule().setUntil(parse);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
 		}
 
 		iObj.getRule().setDay(

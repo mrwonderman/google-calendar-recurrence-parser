@@ -1,4 +1,4 @@
 /bin
 .settings/*
 /target/**
-!/target/google-calendar-recurrence-parser-0.0.1.jar
+!/target/*.jar

@@ -1,7 +1,7 @@
 google-calendar-recurrence-parser
 =================================
 
-When you work with the API for the Google Calendars, you might coma across the following strings:
+When you work with the API for the Google Calendars, you might come across the following strings:
 
 ```
 DTSTART;TZID=Europe/Zurich:20140818T111000 DTEND;
@@ -28,3 +28,15 @@ With this small library you then can simply parse it to a more suitable object o
       "day":"MO"
    }
 }
+```
+### How to use it
+
+This returns the _RecurrenceInfoObject_. On which you then can call _getStart()_, _getEnd()_, _getRule()_.
+```
+RecurrenceParser.getObjectFromRecurrenceString(INPUT);
+```
+
+If you want the JSON-String then use:
+```
+RecurrenceParser.getJsonFromRecurrenceString(INPUT);
+```

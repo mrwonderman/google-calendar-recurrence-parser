@@ -67,6 +67,11 @@ public class ParserTest extends TestCase {
 		}
 	}
 
+	public void testFormattedTime() {
+		assertTrue(iObj.getStart().getFormattedTime().equals("11:10"));
+		assertTrue(iObj.getEnd().getFormattedTime().equals("11:55"));
+	}
+
 	public void testJson() {
 		assertTrue(RecurrenceParser.getJsonFromRecurrenceString(INPUT).equals(
 				JSON));

@@ -1,8 +1,11 @@
 package ch.halcyon.java.recurrenceparser;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class RecurrenceInfoObject {
+	private static SimpleDateFormat hourFormat = new SimpleDateFormat(
+			"HH:mm");
 
 	public class Start {
 		private String timezone;
@@ -31,6 +34,10 @@ public class RecurrenceInfoObject {
 
 		public void setStart(Date start) {
 			this.start = start;
+		}
+		
+		public String getFormattedTime() {
+			return hourFormat.format(start);
 		}
 
 	}
@@ -62,6 +69,10 @@ public class RecurrenceInfoObject {
 
 		public void setEnd(Date end) {
 			this.end = end;
+		}
+		
+		public String getFormattedTime() {
+			return hourFormat.format(end);
 		}
 
 	}
